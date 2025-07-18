@@ -144,5 +144,24 @@ class ExampleRecipesSeeder extends Seeder
                 'flux_icon_name' => 'flower',
             ]
         );
+
+        Plugin::updateOrCreate(
+            [
+                'uuid' => '7105525d-d5f2-4bed-9c91-d152b1be16c3',
+                'name' => 'Weather Again',
+                'user_id' => $user_id,
+                'data_payload' => null,
+                'data_stale_minutes' => 60,
+                'data_strategy' => 'polling',
+                'polling_url' => 'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=48.2083&lon=16.3731',
+                'polling_verb' => 'get',
+                'polling_header' => null,
+                'render_markup' => null,
+                'render_markup_view' => 'recipes.weather-again',
+                'detail_view_route' => null,
+                'icon_url' => null,
+                'flux_icon_name' => 'sun',
+            ]
+        );
     }
 }
