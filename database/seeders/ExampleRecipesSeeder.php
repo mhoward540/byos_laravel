@@ -163,5 +163,24 @@ class ExampleRecipesSeeder extends Seeder
                 'flux_icon_name' => 'sun',
             ]
         );
+
+        Plugin::updateOrCreate(
+            [
+                'uuid' => '0435210c-c0d2-44e2-93b3-783c3ef2d45d',
+                'name' => 'BVG Departures',
+                'user_id' => $user_id,
+                'data_payload' => null,
+                'data_stale_minutes' => 60,
+                'data_strategy' => 'polling',
+                'polling_url' => 'https://v6.bvg.transport.rest/stops/900100003/departures?duration=60',
+                'polling_verb' => 'get',
+                'polling_header' => null,
+                'render_markup' => null,
+                'render_markup_view' => 'recipes.bvg',
+                'detail_view_route' => null,
+                'icon_url' => null,
+                'flux_icon_name' => 'clock',
+            ]
+        );
     }
 }
