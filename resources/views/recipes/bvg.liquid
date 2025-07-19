@@ -25,7 +25,7 @@
                 {% if preferred_modes_raw contains mode %}
                     {% assign delay_minutes = item.delay %}
                     {% if delay_minutes > 0 or delay_minutes < 0 %}
-                        {% assign delay_minutes = delay_minutes | times: 0.16667 | round: 2 %}
+                        {% assign delay_minutes = delay_minutes | times: 0.016667 | round: 2 %}
                     {% endif %}
                     <tr>
                         <td><span class="label">{{ item.plannedWhen | date: "%H:%M" }}</span></td>
